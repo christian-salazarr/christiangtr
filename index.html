@@ -1449,5 +1449,20 @@ src="https://www.facebook.com/tr?id=3145987372255460&ev=PageView&noscript=1"
   floatBtn.style.transition = 'opacity .3s';
 </script>
 
+<script>
+  // Seleciona todos os elementos que possuem a classe 'btn-wpp' (que você já usa nos botões)
+  const botoesWpp = document.querySelectorAll('.btn-wpp');
+
+  // Adiciona um "ouvinte de clique" para cada um desses botões
+  botoesWpp.forEach(botao => {
+    botao.addEventListener('click', function() {
+      // Dispara o evento 'Contact' para o Meta Ads
+      if (typeof fbq === 'function') {
+        fbq('track', 'Contact');
+      }
+    });
+  });
+</script>
+  
 </body>
 </html>
